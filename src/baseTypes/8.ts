@@ -1,8 +1,11 @@
+// !Готово
 /*
-  Створіть тип "Gender", використовуючи union type, 
+  Створіть тип "Gender", використовуючи union type (Union Type позволяет переменной принимать значения разных типов.), 
   який може містити значення "male", "female". Створіть змінну myGender цього типу.
 */
+type Gender = "male" | "female";
 
-const myGender;
+// !Присвоила на свое усмотрение так как у const обязательно должно быть присвоено значение
+const myGender: Gender = "male";
 
 export {};
