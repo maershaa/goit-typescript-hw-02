@@ -1,4 +1,5 @@
-/*
+/* 
+!готвоо
   Ви маєте форму реєстрації користувачів. 
   Іноді потрібно попередньо заповнити форму даними користувача для оновлення його профілю. 
   Однак вам не завжди потрібно заповнити всі поля. Наприклад, користувач може хотіти оновити лише свій email та пароль, 
@@ -8,8 +9,8 @@
 */
 
 type User = {
-  name: string;
-  surname: string;
+  name?: string;
+  surname?: string;
   email: string;
   password: string;
 }
@@ -21,3 +22,5 @@ function createOrUpdateUser(initialValues: User) {
 createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
 
 export {};
+
+/* В аргументе функции createOrUpdateUser использован тип User, в котором поля name и surname опциональны, а поля email и password являются обязательными. Это позволяет передавать объекты, содержащие только обязательные поля без ошибок типизации. */

@@ -1,17 +1,22 @@
 /*
-  Є функція getPromise(), яка повертає проміс, що дозволяється в масив, що містить рядки та числа. 
+!готово  
+Є функція getPromise(), яка повертає проміс, що дозволяється в масив, що містить рядки та числа. 
   Доповніть цю функцію, використовуючи generics, щоб вона повертала правильний тип.
 */
 
-function getPromise () {
-  return new Promise((resolve) => {
+// Функция getPromise возвращает обещание (Promise) массива строк и чисел (string | number)
+function getPromise(): Promise<(string | number)[]> {
+  // Создание нового обещания с ожидаемым типом (string | number)[]
+  return new Promise<(string | number)[]>((resolve) => {
+    // Разрешение обещания с массивом, содержащим строки и числа
     resolve(['Text', 50]);
   });
 }
 
-getPromise()
-.then((data) => {
-  console.log(data);
+// Вызов функции getPromise, возвращающей обещание
+getPromise().then((data) => {
+  // Обработка данных, полученных из обещания
+  console.log(data); // Вывод данных в консоль
 });
 
 export {};
