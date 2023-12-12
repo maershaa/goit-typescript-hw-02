@@ -18,9 +18,14 @@ type Form = {
   errors: Errors;
 };
 
+// Определяем новый тип Params при помощи утилитарного типа Omit.
+// Omit<Form, 'errors'> создает тип, исключая из типа Form свойство 'errors'.
+type Params = Omit<Form, 'errors'>;
 
-// Реалізація Params, яка використовує Pick для відбору всіх полів, окрім 'errors' у типі Form
-type Params = Pick<Form, 'email' | 'firstName' | 'lastName' | 'phone'>;
+
+// Определяем новый тип Params при помощи утилитарного типа Pick.
+// Pick<Form, 'email' | 'firstName' | 'lastName' | 'phone'> создает тип, включающий только указанные свойства из типа Form.
+// type Params = Pick<Form, 'email' | 'firstName' | 'lastName' | 'phone'>;
 
 
 export {};

@@ -4,20 +4,22 @@
 
 // !Готово
 
-// message - аргумент функции, ожидающий строку (string). Это означает, что функция showMessage принимает только строки в качестве аргумента.
-function showMessage(message: string) {
+function showMessage(message: string): undefined {
+  // Функция принимает строку (message) и ничего не возвращает, просто выводит эту строку в консоль.
   console.log(message);
+  // Возвращается undefined, так как нет явного оператора возврата.
 }
 
-// num1 и num2 - это аргументы, ожидающие числа (number). Функция calc принимает два числовых аргумента.
+// Функция принимает два числовых аргумента (num1 и num2) и возвращает их сумму (number).
 function calc(num1: number, num2: number): number {
   return num1 + num2;
 }
 
-// Функция customError не принимает никаких аргументов.
-// потому Она не возвращает никакого значения, что и обозначено типом void.
-function customError(): void {
+// Функция не возвращает никакого значения, но генерирует ошибку с помощью throw new Error().
+// Тип "never" используется, так как функция всегда вызывает ошибку и не возвращает значение.
+function customError(): never {
   throw new Error("Error");
 }
 
 export {};
+

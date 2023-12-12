@@ -8,13 +8,13 @@ enum Role {
   dayOff = "dayOff",
 }
 
-function isWeekend(day: number): Role {
-  if (day >= 1 && day <= 5) {
-    return Role.workingDay;
+function isWeekend(day: Role): boolean {
+  if (day === Role.dayOff) {
+    return true;
   } else {
-    return Role.dayOff;
+    return false;
   }
 }
 
-isWeekend(2);
-console.log(isWeekend(2));
+console.log(isWeekend(Role.workingDay)); // Виведе 'false'
+console.log(isWeekend(Role.dayOff)); // Виведе 'true'
