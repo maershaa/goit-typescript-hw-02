@@ -3,18 +3,23 @@
   і повертає boolean значення, що вказує, чи це день робочий чи вихідний.
 */
 
-enum Role {
-  workingDay = "workingDay",
-  dayOff = "dayOff",
+
+
+enum WeekDay {
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday
 }
 
-function isWeekend(day: Role): boolean {
-  if (day === Role.dayOff) {
-    return true;
-  } else {
-    return false;
-  }
+function isWeekend(day: WeekDay): boolean {
+  return day === WeekDay.Saturday || day === WeekDay.Sunday;
 }
 
-console.log(isWeekend(Role.workingDay)); // Виведе 'false'
-console.log(isWeekend(Role.dayOff)); // Виведе 'true'
+// Приклад використання:
+const today: WeekDay = WeekDay.Saturday;
+const result: boolean = isWeekend(today);
+console.log(result); // Повинно вивести true, оскільки Saturday є вихідним днем
